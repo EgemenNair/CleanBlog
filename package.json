@@ -1,0 +1,31 @@
+{
+  "name": "cleanblog",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Node.js Blog App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgemenNair/CleanBlog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Egemen Nair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EgemenNair/CleanBlog/issues"
+  },
+  "homepage": "https://github.com/EgemenNair/CleanBlog#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
