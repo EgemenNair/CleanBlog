@@ -1,6 +1,6 @@
 {
   "name": "cleanblog",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "Node.js Blog App",
   "main": "app.js",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.8.1"
   }
 }
