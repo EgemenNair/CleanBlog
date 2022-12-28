@@ -21,19 +21,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
-app.get('/+(index.html)?', async (req, res) => {
+app.get('/', async (req, res) => {
   const posts = await Post.find({});
   res.render('index', {
     posts,
   });
 });
-app.get('/about.html', (req, res) => {
+app.get('/about', (req, res) => {
   res.render('about');
 });
-app.get('/post.html', (req, res) => {
-  res.render('post');
+app.get('/posts/:id', async (req, res) => {
+  const post = await Post.findById(req.params.id);
+  res.render('posts', {
+    post,
+  });
 });
-app.get('/add_post.html', (req, res) => {
+app.get('/add_post', (req, res) => {
   res.render('add_post');
 });
 

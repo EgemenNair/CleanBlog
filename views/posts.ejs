@@ -1,0 +1,31 @@
+<%- include('partials/_head.ejs') -%>
+
+<body>
+<%- include('partials/_navigation.ejs') -%>
+<%- include('partials/_header.ejs') -%>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading"><%= post.title %></h2>
+          <p><%= post.detail %></p>
+          <hr/>
+          <p class="post-meta">Posted by
+            <a href="#"><%= post.username ||= 'Anonymous' %></a>
+            on <%= post.dateCreated %></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <%- include('partials/_footer.ejs') -%>
+  <%- include('partials/_scripts.ejs') -%>
+
+</body>
+
+</html>
