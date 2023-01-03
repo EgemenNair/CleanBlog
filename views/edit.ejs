@@ -1,0 +1,48 @@
+<%- include('partials/_head.ejs') -%>
+
+<body>
+<%- include('partials/_navigation.ejs') -%>
+<%- include('partials/_header.ejs') -%>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form method="POST" action="/posts/<%= post._id %>?_method=PUT" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Username</label>
+              <input value="<%= post.username %>" type="text" class="form-control" name="username" placeholder="Username">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Post Title</label>
+              <input value="<%= post.title %>" type="text" class="form-control" name="title" placeholder="Title" required data-validation-required-message="Please enter your name.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Post Detail</label>
+              <textarea rows="5" class="form-control" name="detail" placeholder="Detail"  required data-validation-required-message="Please enter a message."><%= post.detail %></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  
+  <%- include('partials/_footer.ejs') -%>
+  <%- include('partials/_scripts.ejs') -%>
+  
+</body>
+
+</html>
