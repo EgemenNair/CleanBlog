@@ -14,7 +14,7 @@ const app = express();
 
 // Connect to DB
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb://localhost/cleanblog-test-db');
+mongoose.connect('mongodb+srv://egemen:cWqrYtZFJaaxYch1@cluster0.c0klgy6.mongodb.net/clean-blog?retryWrites=true&w=majority');
 
 // Template Engine
 app.set('view engine', 'ejs');
@@ -38,7 +38,7 @@ app.get('/posts/edit/:id', pageController.getEditPage);
 app.get('/about', pageController.getAboutPage);
 app.get('/add_post', pageController.getAddPostPage);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Clean Blog listening on port ${port}`);
 });
